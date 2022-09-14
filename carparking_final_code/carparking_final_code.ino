@@ -46,7 +46,7 @@ void loop()
 
 void parking()
 {
-  if (irs_3() == 1)
+  if ((irs_3() == 1) && (irs_1() == 0 || irs_2() == 0))
   {
     UG_0();
 
@@ -133,20 +133,20 @@ void motor2_for()
 {
   digitalWrite(forwards, LOW);
   digitalWrite(backwards, HIGH); // Activate the relay one direction, they must be different to move the motor
-  delay(200);                    // wait 2 seconds
+  delay(300);                    // wait 2 seconds
   digitalWrite(forwards, HIGH);
   digitalWrite(backwards, HIGH); // Deactivate both relays to brake the motor
-  delay(200);                    // wait 2 seconds
+  delay(300);                    // wait 2 seconds
 }
 
 void motor2_rev()
 {
   digitalWrite(forwards, HIGH);
   digitalWrite(backwards, LOW); // Activate the relay the other direction, they must be different to move the motor
-  delay(200);                   // wait 2 seconds
+  delay(300);                   // wait 2 seconds
   digitalWrite(forwards, HIGH);
   digitalWrite(backwards, HIGH); // Deactivate both relays to brake the motor
-  delay(200);                    // wait 2 seconds
+  delay(300);                    // wait 2 seconds
 }
 
 void ultrasonic()
