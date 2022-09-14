@@ -1,4 +1,10 @@
-// self car parking system
+/*self car parking system
+Guided By : -Dr.Vishal Rathod
+Priyanka Arora
+Madhusudhan Amudula
+Nikhil Yadav
+Himanshu Raipure
+Suryansh Dhakare */
 
 const int up = 7;                 // connect to IN3
 const int down = 6;               // connect to IN4
@@ -64,32 +70,32 @@ void parking()
 // implement ultra sonic functions in UG functions
 void UG_2()
 {
-  motor1_for2slot(); // vertical down implement ultrasonic here
+  motor1_for2slot(); // vertical down for 2nd slot
   delay(1000);
 
   motor2_rev(); // horizontal forward
   delay(1000);
-  verticaldownP(); // vertical down
+  verticaldownP(); // vertical down for 1second
   delay(1000);
 
   motor2_for(); // horizontal backward
   delay(1000);
 
-  motor1_rev2slot(); // vertical Up
+  motor1_rev2slot(); // vertical Up for starting position 30 seconds
   delay(1000);
 }
 
 void UG_1()
 {
-  motor1_for();
-  delay(1000);  // vertical down implemant ultrasonic functions here
+  motor1_for(); // vertical down to slot 1
+  delay(1000);
   motor2_rev(); // horizontal forward
   delay(1000);
-  verticaldownP();
+  verticaldownP(); // vertical down for 1second delay
   delay(1000);
   motor2_for(); // horizontal backward
   delay(1000);
-  motor1_rev(); // vertical Up
+  motor1_rev(); // vertical Up for starting position
   delay(1000);
 }
 
@@ -97,7 +103,7 @@ void UG_0()
 {
   motor2_rev(); // horizontal forward
   delay(1000);
-  verticalUP();
+  verticalupP(); // vertical up for 1second
   delay(1000);
   motor2_for(); // horizontal backward
   delay(1000);
@@ -212,7 +218,7 @@ void verticaldownP()
   delay(1000);              // wait 2 seconds
 }
 
-void verticalUP()
+void verticalupP()
 {
   digitalWrite(up, HIGH);
   digitalWrite(down, LOW); // Activate the relay one direction, they must be different to move the motor
